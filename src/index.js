@@ -5,7 +5,7 @@ import renderSidebar from "./components/Sidebar.js";
 const main = (function() {
   const projects = [];
 
-  projects.push(new Project("default"));
+  projects.push(new Project("General"));
 
   renderSidebar(projects);
 
