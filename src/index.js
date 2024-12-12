@@ -2,6 +2,8 @@ import Project from "./components/Project.js";
 import Task from "./components/Task";
 import renderSidebar from "./components/Sidebar.js";
 
+import "./styles/styles.css";
+
 const main = (function() {
   const projects = [];
 
