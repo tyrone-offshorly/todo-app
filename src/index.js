@@ -7,12 +7,12 @@ const main = (function() {
 
   projects.push(new Project("default"));
 
-  renderSidebar();
+  renderSidebar(projects);
 
 
   const addProject = function(project) { 
     projects.push(project);
-    console.log(projects);
+    renderSidebar(projects);
   }
 
   return {addProject};

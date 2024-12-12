@@ -14,7 +14,7 @@ class Project {
     this.tasks.push(task);
   }
 
-  popTask(deleteTasktaskIndex) {
+  popTask(taskIndex) {
     return this.tasks.splice(taskIndex, 1);
   }
 }
