@@ -1,4 +1,4 @@
-import { renderProjectForm } from "./FormDom";
+import { renderProjectForm, renderTaskForm } from "./FormDOM";
 
 const renderSidebar = (projects) => {
   const nav = document.querySelector('#navigation');
@@ -11,14 +11,16 @@ const renderSidebar = (projects) => {
     ul.append(projectItem);
   });
 
-  nav.append(ul);
-
   const newProjectBtn = document.createElement('button');
   newProjectBtn.type = "button";
   newProjectBtn.textContent = "Add new project";
-
   newProjectBtn.addEventListener('click', renderProjectForm);
-  nav.append(newProjectBtn);
+
+  const newTaskBtn = document.createElement('button');
+  newTaskBtn.type = "button";
+  newTaskBtn.textContent = "Add new task";
+  newTaskBtn.addEventListener('click', renderTaskForm);
+  nav.append(ul, newProjectBtn, newTaskBtn);
 
 };
 

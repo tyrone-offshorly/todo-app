@@ -15,7 +15,12 @@ const main = (function() {
     renderSidebar(projects);
   }
 
-  return {addProject};
+  const addTaskToProject = function(projectIndex, task) {
+    projects[projectIndex].tasks.push(task);
+    console.log(projects);
+  }
+
+  return {addProject, addTaskToProject};
 })();
 
 export { main };
