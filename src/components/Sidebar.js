@@ -1,7 +1,4 @@
-const projects = [
-  {title: "Project 1", desc: ""},
-  {title: "Project 2", desc: ""},
-]
+import { renderProjectForm } from "./ProjectDOM";
 
 const renderSidebar = () => {
   const sidebarContainer = document.querySelector('#sidebar');
@@ -12,16 +9,13 @@ const renderSidebar = () => {
   const home = document.createElement('li');
   home.textContent = "Home";
   ul.append(home);
-  projects.forEach((project) => {
-    const li = document.createElement('li');
-    li.textContent = project.title;
-    ul.append(li);
-  });
   nav.append(ul);
 
   const newProjectBtn = document.createElement('button');
   newProjectBtn.type = "button";
   newProjectBtn.textContent = "Add new project";
+
+  newProjectBtn.addEventListener('click', renderProjectForm);
   nav.append(newProjectBtn);
   sidebarContainer.append(nav);
 
