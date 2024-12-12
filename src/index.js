@@ -1,4 +1,5 @@
-import renderSidebar from "./components/sidebar";
+import Task from "./components/Tasks";
 (function() {
-  renderSidebar();
+  const tasks = [];
+
 })();
