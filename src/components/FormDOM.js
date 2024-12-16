@@ -52,7 +52,9 @@ const renderProjectForm = function() {
 
 const renderTaskForm = function() {
   const body = document.body;
-
+  const dialog = document.createElement("dialog");
+  const dialogTitle = document.createElement("h2");
+  dialogTitle.textContent = "Add a Task";
   // Create the form
   const form = document.createElement("form");
 
@@ -107,6 +109,8 @@ const renderTaskForm = function() {
   dueDateLabel.textContent = "Due Date";
 
   // Is Completed checkbox
+  const isCompletedWrapper = document.createElement("div");
+  isCompletedWrapper.classList.add("is-completed-wrapper");
   const isCompletedInput = document.createElement("input");
   isCompletedInput.type = "checkbox";
   isCompletedInput.name = "isCompleted";
@@ -116,6 +120,7 @@ const renderTaskForm = function() {
   isCompletedLabel.htmlFor = isCompletedInput.id;
   isCompletedLabel.textContent = "Completed";
 
+  isCompletedWrapper.append(isCompletedLabel, isCompletedInput);
   // Submit button
   const submitBtn = document.createElement("button");
   submitBtn.type = "submit";
@@ -147,13 +152,14 @@ const renderTaskForm = function() {
     priorityInput,
     dueDateLabel,
     dueDateInput,
-    isCompletedLabel,
-    isCompletedInput,
+    isCompletedWrapper,
     submitBtn
   );
 
   // Append form to body
-  body.append(form);
+  dialog.append(dialogTitle, form)
+  body.append(dialog);
+  dialog.showModal();
   
 }
 
