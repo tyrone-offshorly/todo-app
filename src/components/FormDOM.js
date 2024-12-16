@@ -6,8 +6,11 @@ const renderProjectForm = function() {
   const body = document.body;
 
   // form for the body
-
+  const dialog = document.createElement("dialog");
   const form = document.createElement("form");
+
+  const dialogTitle = document.createElement("h2");
+  dialogTitle.textContent = "Add a Project";
 
   const titleInput = document.createElement("input");
   titleInput.type = "text";
@@ -16,7 +19,7 @@ const renderProjectForm = function() {
   titleInput.id = "title";
 
   const titleLabel = document.createElement("label");
-  titleLabel.for = titleInput.id;
+  titleLabel.htmlFor = titleInput.id;
   titleLabel.textContent = "Title of the project (required)";
   
   const descInput = document.createElement("input");
@@ -25,7 +28,7 @@ const renderProjectForm = function() {
   descInput.id = "desc";
 
   const descLabel = document.createElement("label");
-  descLabel.for = descInput.id;
+  descLabel.htmlFor = descInput.id;
   descLabel.textContent = "Description of the Project (optional)";
 
   const submitBtn = document.createElement("button");
@@ -36,12 +39,15 @@ const renderProjectForm = function() {
     event.preventDefault();
     main.addProject(new Project(titleInput.value, descInput.value));
     form.reset();
+    dialog.close();
   });
 
   
   form.append(titleLabel, titleInput, descLabel, descInput, submitBtn);
-  body.append(form);
+  dialog.append(dialogTitle,form);
+  body.append(dialog);
   
+  dialog.showModal();
 }
 
 const renderTaskForm = function() {

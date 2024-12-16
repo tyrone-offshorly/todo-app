@@ -1,3 +1,11 @@
+:root {
+  --primary-color: #4CAF50;         /* Soft Green */
+  --secondary-color: #2196F3;      /* Cool Blue */
+  --accent-color: #FFC107;         /* Warm Amber */
+  --primary-text-color: #212121;   /* Dark Gray */
+  --secondary-text-color: #757575; /* Medium Gray */
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -12,13 +20,81 @@ body {
 }
 
 #sidebar {
-  background-color: cornflowerblue;
+  background-color: var(--primary-color);
   padding: 16px;
 
+  & #projects {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
   & p {
     font-weight: bold;
     font-size: 1.25rem;
   }
 
+  & button {
+    border: none;
+    outline: none;
 
+    background-color: var(--secondary-color);
+    color: var(--primary-text-color);
+    height: 2rem;
+    width: 10rem;
+    font-size: 1rem;
+
+    border-radius: 2rem;
+  }
+
+  & ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  & li {
+    font-size: 1.25rem;
+    opacity: .75;
+  }
+
+  & li:hover {
+    width: fit-content;
+    opacity: 1; 
+  }
+}
+dialog {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-250px, -125px);
+  height: 250px;
+  width: 500px;
+  border: none;
+  background-color: var(--secondary-color);
+  color: var(--primary-text-color);
+  padding: 2rem; 
+
+  & form {
+    display: flex;
+    flex-direction: column;
+    flex-basis: content;
+
+    & input {
+      width: 50ch;
+    }    
+
+    & button {
+      margin-top: 1rem;
+      border: none;
+      outline: none;
+      width: 5rem;
+      height: 2rem;
+      border-radius: 1rem;
+      background-color: var(--primary-color);
+    }
+  }
+}
+
+h1 {
+  color: var(--primary-text);  
+  margin-bottom: 1rem;
 }

@@ -8,6 +8,8 @@ const main = (function() {
   const projects = [];
 
   projects.push(new Project("General"));
+  projects.push(new Project("Project 1"));
+  projects.push(new Project("Project 2"));
 
   renderSidebar(projects);
 
